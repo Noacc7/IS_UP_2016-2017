@@ -16,4 +16,5 @@ int main()
         sum += (i/10 + i %10);
     }
     cout<< "Sum  =" << sum;
+    return 0;
 }

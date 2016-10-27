@@ -22,4 +22,6 @@ int main()
     }
     cout << "Sum = "<< sum;
     //cout<< sum;
+
+    return 0;
 }
