@@ -34,6 +34,56 @@ bool hasExist(int arr[], int size, int number){
   return true;
 }
 
+int getRepetionCount(int arr[], int size, int number)
+{
+    int counter = 0;
+    for(int i = 0; i < size; ++i)
+    {
+        if(arr[i] == number)
+        {
+            ++counter;
+        }
+    }
+    return counter;
+}
+int getEvenNumber(int arr[], int size)
+{
+    int counter = 0;
+    for(int i = 0; i < size; ++i)
+    {
+        if(i % 2 == 0)
+        {
+            ++counter;
+        }
+    }
+    return counter;
+}
+
+void selectSort(int arr[], int n)
+{
+    int pos_min,temp;
+
+    for (int i=0; i < n-1; i++)
+    {
+        pos_min = i;
+        for (int j=i+1; j < n; j++)
+        {
+
+            if (arr[j] < arr[pos_min])
+            {
+                pos_min=j;
+            }
+                   
+        }
+
+        if (pos_min != i)
+        {
+             temp = arr[i];
+             arr[i] = arr[pos_min];
+             arr[pos_min] = temp;
+        }
+    }
+}
 void initArray(int arr[], int size)
 {
     for( int i = 0 ; i < size; ++i)
@@ -57,6 +107,20 @@ int getMaxFromArray(int arr[], int size)
     return max;
 }
 
+int getMinFromArray(int arr[], int size)
+{
+    int min = arr[0];
+    
+    for(int i = 1; i < size; i++)
+    {
+        if(min > arr[i])
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
 bool asc(int arr[], int size)
 {
     bool isASC = true;
@@ -68,6 +132,21 @@ bool asc(int arr[], int size)
         }
     }
     return isASC;
+}
+
+
+bool isPrimeNumber(int n)
+{
+    bool isPrime = true;
+    for(int i = 2 ; i*i < n - 1; ++i)
+    {
+        if(n % i == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
+    return isPrime;
 }
 int main()
 {
