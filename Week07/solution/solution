@@ -1,0 +1,82 @@
+
+// Example program
+#include <iostream>
+#include <string>
+
+int getMax(int a, int b)
+{
+    a = 10000;
+    if(a < b) 
+    {
+        return b;
+    } else {
+        return a;
+    }
+}
+
+void printArray(int arr[], int size)
+{
+    for(int i = 0 ; i < size; ++i)
+    {
+        std::cout<< arr[i] << "    ";
+    }
+}
+
+bool hasExist(int arr[], int size, int number){
+	bool exist = false;
+  for( int i = 0 ; i < size; ++i)
+  {
+  	if(arr[i] == number)
+    {
+    	exist = true;
+    }
+  }
+  return true;
+}
+
+void initArray(int arr[], int size)
+{
+    for( int i = 0 ; i < size; ++i)
+    {
+        std::cin>> arr[i];
+    }
+}
+
+
+int getMaxFromArray(int arr[], int size)
+{
+    int max = arr[0];
+    
+    for(int i = 1; i < size; i++)
+    {
+        if(max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+bool asc(int arr[], int size)
+{
+    bool isASC = true;
+    for(int i = 0; i < size - 1; ++i)
+    {
+        if( arr[i] >= arr[i + 1])
+        {
+            isASC = false;
+        }
+    }
+    return isASC;
+}
+int main()
+{
+    int arr[5];
+    int size = 5;
+    initArray(arr, size);
+    printArray (arr, size);
+    std::cout << std::endl;
+    std::cout<< asc(arr, size);
+    //std::cout<< getMaxFromArray(arr, 5);    
+    
+}
