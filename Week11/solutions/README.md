@@ -1,4 +1,5 @@
 **Задачи**
+```
 
 int strlen(char* text)
 {
@@ -68,3 +69,4 @@ void strcpy(char* src, char *& dest)
     }
     dest[strlen(src)] = '\0';
 } 
+```
